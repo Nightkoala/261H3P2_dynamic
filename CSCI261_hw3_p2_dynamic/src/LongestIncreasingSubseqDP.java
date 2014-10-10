@@ -1,10 +1,10 @@
-/*
+/**
  * LongestIncreasingSubswqDP.java
  * 
  * @author	Derek Brown <djb3718@rit.edu>
  * 
  * purpose	A dynamic programming implementation for finding the longest 
- * 			subsequence of increasing numbers in an array.
+ * 		subsequence of increasing numbers in an array.
  */
 
 import java.util.Scanner;
@@ -31,7 +31,7 @@ public class LongestIncreasingSubseqDP {
 
 	/**
 	 * Reads in the data from the user and runs the dynamic programming
-	 * algorithm on the data.  The algorithm finds the length of the longest
+	 * algorithm on the data, The algorithm finds the length of the longest
 	 * subsequence of increasing values and displays it to the user.
 	 * 
 	 * @param args	Command line arguments.  Unused.
@@ -48,13 +48,15 @@ public class LongestIncreasingSubseqDP {
 			int value = Integer.parseInt(input);
 			values[i] = value;
 		}//end for
-		LongestIncreasingSubseqDP DP = new LongestIncreasingSubseqDP( values, size);
+		LongestIncreasingSubseqDP DP =
+			new LongestIncreasingSubseqDP( values, size);
 		
 		// Algorithm
 		for( int j = 0 ; j < size ; j++ ) {
 			DP.solution[j] = 1;
 			for( int k = 0 ; k < j ; k++ ) {
-				if( ( DP.sequence[k] < DP.sequence[j] ) && (DP.solution[j] < DP.solution[k]+1 ) ) {
+				if( ( DP.sequence[k] < DP.sequence[j] ) &&
+					(DP.solution[j] < DP.solution[k]+1 ) ) {
 					DP.solution[j] = DP.solution[k]+1;
 				}//end if
 			}//end for
