@@ -18,11 +18,24 @@ public class LongestIncreasingSubseqDP {
 	
 	// Constructor
 	
+	/**
+	 * Constructor for creating a LongestIncreasingSubseqDP instance
+	 * 
+	 * @param values	The array of values read in from user
+	 * @param size		The number of elements in the initial array
+	 */
 	public LongestIncreasingSubseqDP( int[] values, int size ) {
 		this.sequence = values;
 		this.solution = new int[size];
 	}//end LongestIncreasingSubseqDP constructor
 
+	/**
+	 * Reads in the data from the user and runs the dynamic programming
+	 * algorithm on the data.  The algorithm finds the length of the longest
+	 * subsequence of increasing values and displays it to the user.
+	 * 
+	 * @param args	Command line arguments.  Unused.
+	 */
 	public static void main(String[] args) {
 		
 		// Read in the values
